@@ -1,0 +1,251 @@
+[
+    {
+        "Id": "c4cd5816fe231fe32e3b297534c6cca2c35023cb949f499aac67d9113ddf087c",
+        "Created": "2022-10-08T04:07:42.589584314Z",
+        "Path": "bash",
+        "Args": [
+            "-c",
+            "rm -rf tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 13079,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2022-10-08T04:07:43.22867872Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:61a9e46a2ace21a69de0807238df63a67d124f31a1daa1c08dc52985001598d3",
+        "ResolvConfPath": "/var/lib/docker/containers/c4cd5816fe231fe32e3b297534c6cca2c35023cb949f499aac67d9113ddf087c/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/c4cd5816fe231fe32e3b297534c6cca2c35023cb949f499aac67d9113ddf087c/hostname",
+        "HostsPath": "/var/lib/docker/containers/c4cd5816fe231fe32e3b297534c6cca2c35023cb949f499aac67d9113ddf087c/hosts",
+        "LogPath": "/var/lib/docker/containers/c4cd5816fe231fe32e3b297534c6cca2c35023cb949f499aac67d9113ddf087c/c4cd5816fe231fe32e3b297534c6cca2c35023cb949f499aac67d9113ddf087c-json.log",
+        "Name": "/funny_movies_web_1",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/home/daopt/access/funny_movies:/usr/src/funny_movies:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "funny_movies_default",
+            "PortBindings": {
+                "3000/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "3000"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": [],
+            "CapAdd": null,
+            "CapDrop": null,
+            "Capabilities": null,
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "KernelMemory": 0,
+            "KernelMemoryTCP": 0,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/2750fa71cb60846a9ee6ea3b8f4aa61181e819cd86a31b673e2d2ebd3d3cead1-init/diff:/var/lib/docker/overlay2/01b3fe7ea1e5994714923e1b184ee37e62ecacddc9f6b9c467f2e16c3a38b200/diff:/var/lib/docker/overlay2/9d17a213e65dcf3cec7c6ad84d59df0ac590c3816ee4161a5966ac67705f945f/diff:/var/lib/docker/overlay2/26b84afcae133351e0439ab5058b753fb4b0dfaa122e713ad6ddc5272f911513/diff:/var/lib/docker/overlay2/d62b1016df63a574b9205f6be0286bbadf9c2f9fc827ccb4696db2f6fa461965/diff:/var/lib/docker/overlay2/d32a11ef29326010a93b01b1c58389e00c6ad9bf88e62a2ff297acfd84a43730/diff:/var/lib/docker/overlay2/fa833aac9a20ab0dc338c1534bcb07872a3bcf02cd73a0d1ecb1067d18749c6f/diff:/var/lib/docker/overlay2/d9ba86139b824be406416a563a97b61ccb49f306ce988e399d0b923461526756/diff:/var/lib/docker/overlay2/eed17b1a89b1f10c9ca39f582c2229025c231655a942bda3e56495f26b68b058/diff:/var/lib/docker/overlay2/e22e9ec497ed30add8b84a467a00a21ae4a190734d1a23bdcd79578c64173766/diff:/var/lib/docker/overlay2/543a454af43268f06bd5f7687d5bf5dddb023f7b1fa8dea4ebd75d3c35062170/diff:/var/lib/docker/overlay2/de24b9f0bf3adc8ff48ecbaa716e05562537f9113507360ca53a4907c6923de4/diff:/var/lib/docker/overlay2/d8a3efe297a8b67bd455fb8c2b67ba28f05d12e4a3d45cd1ea78376699a85a85/diff:/var/lib/docker/overlay2/f78fb94bfe52ee9f1d470d87e0bdadf3ac05847599e8c76073370382ab4d1032/diff:/var/lib/docker/overlay2/d78e2ca64702e9cee653a7c7392f8b50317828420ae99f70a352c7647c6d8f9d/diff:/var/lib/docker/overlay2/ea398a4442af515d4540daef593b4d2551f8c29761ecb61193ff441c6364effa/diff:/var/lib/docker/overlay2/45758aa623142c0774936fec5821e3474cc8cc9ef1c073dd1f34e59e06e73c6e/diff:/var/lib/docker/overlay2/bb2f1591768ffee39ce83b1a84370203432c31c3ca7512f8376525f2e1099f1e/diff:/var/lib/docker/overlay2/8180268d0663af9a1dee1454fdd2403fa64204812c51e16606fd77bae9079e8f/diff",
+                "MergedDir": "/var/lib/docker/overlay2/2750fa71cb60846a9ee6ea3b8f4aa61181e819cd86a31b673e2d2ebd3d3cead1/merged",
+                "UpperDir": "/var/lib/docker/overlay2/2750fa71cb60846a9ee6ea3b8f4aa61181e819cd86a31b673e2d2ebd3d3cead1/diff",
+                "WorkDir": "/var/lib/docker/overlay2/2750fa71cb60846a9ee6ea3b8f4aa61181e819cd86a31b673e2d2ebd3d3cead1/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/home/daopt/access/funny_movies",
+                "Destination": "/usr/src/funny_movies",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "foreman.example.com",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "3000/tcp": {}
+            },
+            "Tty": true,
+            "OpenStdin": true,
+            "StdinOnce": false,
+            "Env": [
+                "RAILS_ENV=development",
+                "PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "RUBY_MAJOR=3.1",
+                "RUBY_VERSION=3.1.2",
+                "RUBY_DOWNLOAD_SHA256=ca10d017f8a1b6d247556622c841fc56b90c03b1803f87198da1e4fd3ec3bf2a",
+                "GEM_HOME=/usr/local/bundle",
+                "BUNDLE_SILENCE_ROOT_WARNING=1",
+                "BUNDLE_APP_CONFIG=/usr/local/bundle"
+            ],
+            "Cmd": [
+                "bash",
+                "-c",
+                "rm -rf tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+            ],
+            "Image": "funny_movies_web",
+            "Volumes": {
+                "/usr/src/funny_movies": {}
+            },
+            "WorkingDir": "/usr/src/funny_movies",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "75728051327551a6eae74973c764aa082e0cc41b032974bd624b99ff84452115",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "funny_movies",
+                "com.docker.compose.project.config_files": "docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/home/daopt/access/funny_movies",
+                "com.docker.compose.service": "web",
+                "com.docker.compose.version": "1.27.4"
+            }
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "975167230ac5ed06517fa65ee2307823dc78ac973ecc57267844120b77ed82c5",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {
+                "3000/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "3000"
+                    }
+                ]
+            },
+            "SandboxKey": "/var/run/docker/netns/975167230ac5",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "funny_movies_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "web",
+                        "c4cd5816fe23"
+                    ],
+                    "NetworkID": "2a079d81eb19a7f5bc63955be275f40cd7d69163edcfd7a633e38963e421efb7",
+                    "EndpointID": "6e5370e7fb05703d2e4334c1db70882667654c1034d278391cfe14205efd872b",
+                    "Gateway": "172.19.0.1",
+                    "IPAddress": "172.19.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:13:00:02",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]
