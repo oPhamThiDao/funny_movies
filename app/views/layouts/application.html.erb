@@ -9,36 +9,49 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
-
   <body>
     <header class="p-3 text-bg-dark">
       <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="#" class="nav-link px-2 text-secondary">Funny Movies</a></li>
-          </ul>
-
-          <form class="row col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-            <div class="col-auto">
-              <label for="username" class="visually-hidden">username</label>
-              <input type="username" class="form-control" id="username" placeholder="username">
-            </div>
-            <div class="col-auto">
-              <label for="password" class="visually-hidden">password</label>
-              <input type="password" class="form-control" id="password" placeholder="password">
-            </div>
-
-            <div class="col-auto">
-              <button type="button" class="btn btn-outline-light me-2">Login</button>
-            </div>
-          </form>
-
-          <div class="text-end">
-            <button type="button" class="btn btn-warning">Sign-up</button>
+          <div class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <%= link_to "Funny Movies", root_path, class: "nav-link px-2 text-secondary" %>
           </div>
+            <% if user_signed_in? %>
+              <div class="row col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                <div class="col-auto">
+                  <button type="button" class="btn btn-outline-light me-2">Share a movies</button>
+                </div>
+              </div>
+              <div class="text-end">
+                <%= button_to "Log out", destroy_user_session_path, :method => "delete", class: "btn btn-warning" %>
+              </div>
+            <% else %>
+              <%= form_for "user", url: user_session_path, class: "row col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" do |f| %>
+                <div class="col-auto">
+                  <%= f.label :username, class: "visually-hidden" %>
+                  <%= f.text_field :username, class: "form-control", placeholder: "username", autofocus: true %>
+                </div>
+                <div class="col-auto">
+                  <%= f.label :password, class: "visually-hidden" %>
+                  <%= f.password_field :password, class: "form-control", placeholder: "password" %>
+                </div>
+
+                <div class="col-auto">
+                  <%= f.submit "Login", class:"btn btn-outline-light me-2" %>
+                </div>
+              <% end %>
+
+              <div class="text-end">
+                <%= link_to "Sign-up", new_user_registration_path, class: "btn btn-warning" %>
+              </div>
+            <% end %>
         </div>
       </div>
     </header>
-    <%= yield %>
+    <div class="container">
+      <div class="row mb-2">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
