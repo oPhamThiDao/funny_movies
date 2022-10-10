@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  get 'home/index'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  devise_for :users, controllers: { registrations: 'users/registrations' }
   root "home#index"
+  resources :share, only: [:new, :create]
+  patch "reaction/:id", to: "share#reaction", as: "reaction_movie"
 end
