@@ -1,11 +1,17 @@
 class ShareController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @movie = Movie.new
   end
 
   def create
-    movie = MovieService.new(movie_params).create_movie
-    redirect_to root_path
+    @movie = MovieService.new(movie_params).create_movie
+    if @movie.errors.any?
+      render :new
+    else
+      redirect_to root_path
+    end
   end
 
   def reaction

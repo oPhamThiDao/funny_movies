@@ -1,7 +1,12 @@
-<%= form_for @movie, url: share_index_path, class: "container" do |f| %>
+<%= form_for @movie, url: share_index_path, class: "container", data: { turbo: false } do |f| %>
   <div class="mb-3">
     <div class="col-md-6 offset-md-3">
-      <%= f.label :url, "Youtube URL:", class: "form-label" %>
+      <%= render "users/shared/error_messages", resource: @movie %>
+    </div>
+  </div>
+  <div class="mb-3">
+    <div class="col-md-6 offset-md-3">
+      <%= f.label :url, "Youtube URL: (format: https://youtu.be/xxxxx)", class: "form-label" %>
       <%= f.text_field :url, class: "form-control", required: true %>
     </div>
   </div>

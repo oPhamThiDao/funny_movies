@@ -9,6 +9,8 @@ class MovieService
 
   def create_movie
     movie = Movie.new(params)
+    return movie if movie.invalid?
+
     data = Youtube::Client.video_detail(video_id)
     if data.any?
       movie.assign_attributes(video_id: video_id, **data["items"].first["snippet"].slice("title", "description"))
@@ -16,6 +18,9 @@ class MovieService
     else
       movie.errors.add(:url, "URL invalid")
     end
+    movie
+  rescue => ex
+    movie.errors.add(:url, "URL invalid")
     movie
   end
 

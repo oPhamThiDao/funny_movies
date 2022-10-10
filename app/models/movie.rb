@@ -1,5 +1,7 @@
 class Movie < ApplicationRecord
-  validates :url, presence: true, uniqueness: true
+  validates :url, presence: true, uniqueness: true, format: {
+    with: /\Ahttps:\/\/youtu\.be\/([a-z]|[A-Z]|[0-9])+\z/, message: "is invalid"
+  }
 
   belongs_to :user
 
