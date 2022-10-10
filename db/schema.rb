@@ -10,7 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_08_083442) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_10_082512) do
+  create_table "movie_users", force: :cascade do |t|
+    t.integer "movie_id"
+    t.integer "user_id"
+    t.integer "status", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["movie_id"], name: "index_movie_users_on_movie_id"
+    t.index ["user_id"], name: "index_movie_users_on_user_id"
+  end
+
+  create_table "movies", force: :cascade do |t|
+    t.integer "user_id"
+    t.text "url"
+    t.string "video_id"
+    t.string "title"
+    t.string "source_type"
+    t.text "description"
+    t.bigint "likes_count", default: 0, null: false
+    t.bigint "dislikes_count", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_movies_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username", default: "", null: false
     t.string "email", default: ""

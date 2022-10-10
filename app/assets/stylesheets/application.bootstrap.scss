@@ -1,2 +1,21 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+
+header.p-3.text-bg-dark {
+  margin-bottom: 50px;
+}
+
+.card-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+          line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
+.movie-info {
+  .active {
+    color: #0d6efd;
+  }
+}
