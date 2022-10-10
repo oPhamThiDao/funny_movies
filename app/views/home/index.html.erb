@@ -3,17 +3,27 @@
     <iframe width="450" height="315" src="<%= movie.embed_url %>"> </iframe>
     <div class="card-body d-flex flex-column align-items-start">
       <strong class="d-inline-block mb-2 text-primary"><%= movie.title %></strong>
-      <% reaction = @reaction_movies[movie.id] %>
-      <% status = reaction ? reaction.status : "none" %>
-
-      <div class="col-auto movie-reaction" data-id="<%= movie.id %>" data-status="<%= status %>">
-        <button class="btn like-movie <%= status == "like" ? "active" : "" %>">
-          <i class="bi bi-hand-thumbs-up">&nbsp;<%= movie.likes_count %></i>
-        </button>
-        <button class="btn dislike-movie <%= status == "dislike" ? "active" : "" %>">
-          <i class="bi bi-hand-thumbs-down">&nbsp;<%= movie.dislikes_count %></i>
-        </button>
-      </div>
+      <% if user_signed_in? %>
+        <% reaction = @reaction_movies[movie.id] %>
+        <% status = reaction ? reaction.status : "none" %>
+        <div class="col-auto movie-reaction" data-id="<%= movie.id %>" data-status="<%= status %>">
+          <button class="btn like-movie <%= status == "like" ? "active" : "" %>">
+            <i class="bi bi-hand-thumbs-up">&nbsp;<%= movie.likes_count %></i>
+          </button>
+          <button class="btn dislike-movie <%= status == "dislike" ? "active" : "" %>">
+            <i class="bi bi-hand-thumbs-down">&nbsp;<%= movie.dislikes_count %></i>
+          </button>
+        </div>
+      <% else %>
+        <div class="col-auto movie-reaction">
+          <button class="btn">
+            <i class="bi bi-hand-thumbs-up">&nbsp;<%= movie.likes_count %></i>
+          </button>
+          <button class="btn">
+            <i class="bi bi-hand-thumbs-down">&nbsp;<%= movie.dislikes_count %></i>
+          </button>
+        </div>
+      <% end %>
       <div class="mb-1 text-muted">Shared by: <%= movie.user.username %></div>
       <div class="card-text mb-auto"><%= simple_format(movie.description) %></div>
     </div>
